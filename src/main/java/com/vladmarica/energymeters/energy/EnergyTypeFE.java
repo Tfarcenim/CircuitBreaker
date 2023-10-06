@@ -1,6 +1,6 @@
 package com.vladmarica.energymeters.energy;
 
-import com.vladmarica.energymeters.integration.ModIDs;
+import com.vladmarica.energymeters.ModIDs;
 import net.minecraftforge.fml.common.Loader;
 
 public class EnergyTypeFE extends EnergyType {

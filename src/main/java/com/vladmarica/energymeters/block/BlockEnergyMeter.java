@@ -1,9 +1,9 @@
 package com.vladmarica.energymeters.block;
 
 import com.vladmarica.energymeters.EnergyMetersMod;
+import com.vladmarica.energymeters.ModIDs;
 import com.vladmarica.energymeters.energy.EnergyType;
 import com.vladmarica.energymeters.energy.EnergyTypes;
-import com.vladmarica.energymeters.integration.ModIDs;
 import com.vladmarica.energymeters.properties.UnlistedPropertyBoolean;
 import com.vladmarica.energymeters.properties.UnlistedPropertyFacing;
 import com.vladmarica.energymeters.tile.TileEntityEnergyMeterBase;
@@ -70,10 +70,6 @@ public class BlockEnergyMeter extends BlockBase {
     switch (type) {
       case FE_METER:
         return new TileEntityEnergyMeterFE();
-      case MJ_METER:
-        return new TileEntityEnergyMeterMJ();
-      case EU_METER:
-        return new TileEntityEnergyMeterEU();
       default:
         EnergyMetersMod.LOGGER.error("Attempted to create tile entity for invalid type {}", type.getName());
     }
@@ -223,9 +219,7 @@ public class BlockEnergyMeter extends BlockBase {
   }
 
   public enum MeterType implements IStringSerializable  {
-    FE_METER(0, EnergyTypes.FE),
-    MJ_METER(1, EnergyTypes.MJ),
-    EU_METER(2, EnergyTypes.EU);
+    FE_METER(0, EnergyTypes.FE);
 
     private int index;
     private EnergyType type;
